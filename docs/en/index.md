@@ -15,7 +15,7 @@ hero:
       link: /en/guide/getting-started
     - theme: alt
       text: GitHub
-      link: https://github.com/NekoBotTeam/NekoBot
+      link: https://github.com/OfficialNekoTeam/NekoBot
 
 features:
   - title: Multi-Platform Support

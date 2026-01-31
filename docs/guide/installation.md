@@ -10,7 +10,7 @@
 
 ```bash
 # 克隆仓库
-git clone https://github.com/NekoBotTeam/NekoBot.git
+git clone https://github.com/OfficialNekoTeam/NekoBot.git
 cd NekoBot
 
 # 使用 uv 安装
@@ -24,7 +24,7 @@ uv run main.py
 
 ```bash
 # 克隆仓库
-git clone https://github.com/NekoBotTeam/NekoBot.git
+git clone https://github.com/OfficialNekoTeam/NekoBot.git
 cd NekoBot
 
 # 使用 pip 安装

@@ -348,4 +348,4 @@ AI 自动生成的会话摘要，帮助快速了解会话内容。
 
 - [仪表盘介绍](./dashboard.md)
 - [仪表盘部署](./dashboard-deployment.md)
-- [GitHub 仓库](https://github.com/NekoBotTeam/NekoBot-Dashboard)
+- [GitHub 仓库](https://github.com/OfficialNekoTeam/NekoBot-Dashboard)

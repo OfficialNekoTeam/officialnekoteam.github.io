@@ -133,16 +133,16 @@ NekoBot/
 
 ## 相关项目
 
-- **[NekoBot](https://github.com/NekoBotTeam/NekoBot)** - 主项目，后端框架
-- **[NekoBot Dashboard](https://github.com/NekoBotTeam/NekoBot-Dashboard)** - Web 管理后台
-- **[NekoBot Plugins Example](https://github.com/NekoBotTeam/NekoBot_Plugins_Example)** - 插件开发示例
+- **[NekoBot](https://github.com/OfficialNekoTeam/NekoBot)** - 主项目，后端框架
+- **[NekoBot Dashboard](https://github.com/OfficialNekoTeam/NekoBot-Dashboard)** - Web 管理后台
+- **[NekoBot Plugins Example](https://github.com/OfficialNekoTeam/NekoBot_Plugins_Example)** - 插件开发示例
 - **[NekoBot 文档](https://docs.nekobot.dev)** - 项目文档（本站点）
 
 ## 开源协议
 
-- **NekoBot**: [AGPL-3.0](https://github.com/NekoBotTeam/NekoBot/blob/main/LICENSE)
-- **NekoBot Dashboard**: [MIT](https://github.com/NekoBotTeam/NekoBot-Dashboard/blob/main/LICENSE)
-- **NekoBot 文档**: [MIT](https://github.com/NekoBotTeam/nekobotteam.github.io/blob/main/LICENSE)
+- **NekoBot**: [AGPL-3.0](https://github.com/OfficialNekoTeam/NekoBot/blob/main/LICENSE)
+- **NekoBot Dashboard**: [MIT](https://github.com/OfficialNekoTeam/NekoBot-Dashboard/blob/main/LICENSE)
+- **NekoBot 文档**: [MIT](https://github.com/OfficialNekoTeam/nekobotteam.github.io/blob/main/LICENSE)
 
 ## 路线图
 
@@ -194,8 +194,8 @@ NekoBot/
 
 ## 联系方式
 
-- **GitHub Issues**: [提交问题](https://github.com/NekoBotTeam/NekoBot/issues)
-- **GitHub Discussions**: [参与讨论](https://github.com/NekoBotTeam/NekoBot/discussions)
+- **GitHub Issues**: [提交问题](https://github.com/OfficialNekoTeam/NekoBot/issues)
+- **GitHub Discussions**: [参与讨论](https://github.com/OfficialNekoTeam/NekoBot/discussions)
 
 ## 致谢
 
@@ -208,10 +208,10 @@ NekoBot/
 
 ## 许可证
 
-本项目采用 AGPL-3.0 许可证 - 查看 [LICENSE](https://github.com/NekoBotTeam/NekoBot/blob/main/LICENSE) 文件了解详情
+本项目采用 AGPL-3.0 许可证 - 查看 [LICENSE](https://github.com/OfficialNekoTeam/NekoBot/blob/main/LICENSE) 文件了解详情
 
 ---
 
 **如果这个项目对你有帮助，请给个 Star ⭐**
 
-Made with ❤️ by NekoBotTeam
+Made with ❤️ by OfficialNekoTeam

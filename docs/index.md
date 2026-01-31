@@ -15,10 +15,10 @@ hero:
       link: /guide/getting-started
     - theme: alt
       text: GitHub
-      link: https://github.com/NekoBotTeam/NekoBot
+      link: https://github.com/OfficialNekoTeam/NekoBot
     - theme: alt
       text: Web 仪表盘
-      link: https://github.com/NekoBotTeam/NekoBot-Dashboard
+      link: https://github.com/OfficialNekoTeam/NekoBot-Dashboard
 
 features:
   - title: 多平台支持

@@ -669,7 +669,7 @@ class BasePlugin(ABC):
 
 ## 更多示例
 
-更多插件示例请参考：[NekoBot Plugins Example](https://github.com/NekoBotTeam/NekoBot_Plugins_Example)
+更多插件示例请参考：[NekoBot Plugins Example](https://github.com/OfficialNekoTeam/NekoBot_Plugins_Example)
 
 ## 相关文档
 

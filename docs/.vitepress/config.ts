@@ -22,9 +22,9 @@ export default defineConfig({
           {
             text: '相关项目',
             items: [
-              { text: 'NekoBot', link: 'https://github.com/NekoBotTeam/NekoBot' },
-              { text: 'NekoBot Dashboard', link: 'https://github.com/NekoBotTeam/NekoBot-Dashboard' },
-              { text: '插件示例', link: 'https://github.com/NekoBotTeam/NekoBot_Plugins_Example' }
+              { text: 'NekoBot', link: 'https://github.com/OfficialNekoTeam/NekoBot' },
+              { text: 'NekoBot Dashboard', link: 'https://github.com/OfficialNekoTeam/Nekobot-Dashboard' },
+              { text: '插件示例', link: 'https://github.com/OfficialNekoTeam/nekobot_plugin_template' }
             ]
           }
         ],
@@ -166,9 +166,9 @@ export default defineConfig({
           {
             text: 'Related Projects',
             items: [
-              { text: 'NekoBot', link: 'https://github.com/NekoBotTeam/NekoBot' },
-              { text: 'NekoBot Dashboard', link: 'https://github.com/NekoBotTeam/NekoBot-Dashboard' },
-              { text: 'Plugin Examples', link: 'https://github.com/NekoBotTeam/NekoBot_Plugins_Example' }
+              { text: 'NekoBot', link: 'https://github.com/OfficialNekoTeam/NekoBot' },
+              { text: 'NekoBot Dashboard', link: 'https://github.com/OfficialNekoTeam/Nekobot-Dashboard' },
+              { text: 'Plugin Examples', link: 'https://github.com/OfficialNekoTeam/nekobot_plugin_template' }
             ]
           }
         ],
@@ -342,18 +342,18 @@ export default defineConfig({
 
     // 社交链接
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/NekoBotTeam/NekoBot' }
+      { icon: 'github', link: 'https://github.com/OfficialNekoTeam/NekoBot' }
     ],
 
     // 页脚
     footer: {
       message: '基于 AGPL-3.0 与 MIT 许可发布',
-      copyright: 'Copyright © 2025-present NekoBotTeam'
+      copyright: 'Copyright © 2025-present OfficialNekoTeam'
     },
 
     // 编辑链接
     editLink: {
-      pattern: 'https://github.com/NekoBotTeam/nekobotteam.github.io/edit/main/docs/:path',
+      pattern: 'https://github.com/OfficialNekoTeam/officialnekoteam.github.io/edit/main/docs/:path',
       text: '在 GitHub 上编辑此页'
     },
 

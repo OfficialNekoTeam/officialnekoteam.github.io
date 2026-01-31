@@ -15,7 +15,7 @@ This section details NekoBot installation methods, configuration options, and de
 
 ```bash
 # Clone repository
-git clone https://github.com/NekoBotTeam/NekoBot.git
+git clone https://github.com/OfficialNekoTeam/NekoBot.git
 cd NekoBot
 
 # Install with uv
@@ -29,7 +29,7 @@ uv run main.py
 
 ```bash
 # Clone repository
-git clone https://github.com/NekoBotTeam/NekoBot.git
+git clone https://github.com/OfficialNekoTeam/NekoBot.git
 cd NekoBot
 
 # Install with pip

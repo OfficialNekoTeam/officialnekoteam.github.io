@@ -170,6 +170,6 @@ nekobot-dashboard/
 
 ## 相关链接
 
-- [GitHub 仓库](https://github.com/NekoBotTeam/NekoBot-Dashboard)
+- [GitHub 仓库](https://github.com/OfficialNekoTeam/NekoBot-Dashboard)
 - [仪表盘部署](./dashboard-deployment.md)
 - [功能详细说明](./dashboard-features.md)

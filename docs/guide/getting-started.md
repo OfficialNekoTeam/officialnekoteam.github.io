@@ -15,7 +15,7 @@
 ### 1. 克隆仓库
 
 ```bash
-git clone https://github.com/NekoBotTeam/NekoBot.git
+git clone https://github.com/OfficialNekoTeam/NekoBot.git
 cd NekoBot
 ```
 
@@ -83,7 +83,7 @@ http://localhost:6285
 
 ### 6. 访问独立部署的 Web 仪表盘
 
-如果你单独部署了 [NekoBot Dashboard](https://github.com/NekoBotTeam/NekoBot-Dashboard)：
+如果你单独部署了 [NekoBot Dashboard](https://github.com/OfficialNekoTeam/NekoBot-Dashboard)：
 
 1. 克隆仪表盘仓库
 2. 安装依赖并启动开发服务器
@@ -210,7 +210,7 @@ NekoBot 提供 Docker 镜像，支持容器化部署。
 
 ```bash
 # 克隆仓库
-git clone https://github.com/NekoBotTeam/NekoBot.git
+git clone https://github.com/OfficialNekoTeam/NekoBot.git
 cd NekoBot
 
 # 启动容器
@@ -229,6 +229,6 @@ docker run -d -p 6285:6285 --name nekobot nekobot
 
 ## 相关项目
 
-- [NekoBot](https://github.com/NekoBotTeam/NekoBot) - 主项目
-- [NekoBot Dashboard](https://github.com/NekoBotTeam/NekoBot-Dashboard) - Web 管理后台
-- [NekoBot Plugins Example](https://github.com/NekoBotTeam/NekoBot_Plugins_Example) - 插件示例
+- [NekoBot](https://github.com/OfficialNekoTeam/NekoBot) - 主项目
+- [NekoBot Dashboard](https://github.com/OfficialNekoTeam/NekoBot-Dashboard) - Web 管理后台
+- [NekoBot Plugins Example](https://github.com/OfficialNekoTeam/NekoBot_Plugins_Example) - 插件示例

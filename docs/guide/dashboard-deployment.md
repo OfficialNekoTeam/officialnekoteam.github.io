@@ -30,7 +30,7 @@ uv run main.py
 #### 1. 克隆仪表盘仓库
 
 ```bash
-git clone https://github.com/NekoBotTeam/NekoBot-Dashboard.git
+git clone https://github.com/OfficialNekoTeam/NekoBot-Dashboard.git
 cd NekoBot-Dashboard
 ```
 
@@ -289,4 +289,4 @@ npm install
 
 - [仪表盘介绍](./dashboard.md)
 - [功能详细说明](./dashboard-features.md)
-- [GitHub 仓库](https://github.com/NekoBotTeam/NekoBot-Dashboard)
+- [GitHub 仓库](https://github.com/OfficialNekoTeam/NekoBot-Dashboard)
