@@ -9,7 +9,7 @@ export const Footer_Data: FooterData = {
       links: [
         { name: 'Vercel-NekoBot', link: 'https://docs.nekobot.dev/' },
         { name: 'Vercel-Docs', link: 'https://nekobot-docs.vercel.app/' },
-        { name: 'Github Page', link: 'https://nekobotteam.github.io/' },
+        { name: 'Github Page', link: 'https://officialnekoteam.github.io/' },
       ],
     },
     {

@@ -135,14 +135,14 @@ NekoBot/
 
 - **[NekoBot](https://github.com/OfficialNekoTeam/NekoBot)** - 主项目，后端框架
 - **[NekoBot Dashboard](https://github.com/OfficialNekoTeam/NekoBot-Dashboard)** - Web 管理后台
-- **[NekoBot Plugins Example](https://github.com/OfficialNekoTeam/NekoBot_Plugins_Example)** - 插件开发示例
+- **[NekoBot Plugin Template](https://github.com/OfficialNekoTeam/nekobot_plugin_template)** - 插件开发模板
 - **[NekoBot 文档](https://docs.nekobot.dev)** - 项目文档（本站点）
 
 ## 开源协议
 
 - **NekoBot**: [AGPL-3.0](https://github.com/OfficialNekoTeam/NekoBot/blob/main/LICENSE)
 - **NekoBot Dashboard**: [MIT](https://github.com/OfficialNekoTeam/NekoBot-Dashboard/blob/main/LICENSE)
-- **NekoBot 文档**: [MIT](https://github.com/OfficialNekoTeam/nekobotteam.github.io/blob/main/LICENSE)
+- **NekoBot 文档**: [MIT](https://github.com/OfficialNekoTeam/officialnekoteam.github.io/blob/main/LICENSE)
 
 ## 路线图
 

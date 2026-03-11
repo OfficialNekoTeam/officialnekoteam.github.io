@@ -5,8 +5,8 @@
 ## 项目信息
 
 - **项目名称**: NekoBot
-- **项目地址**: https://github.com/NekoBotTeam/NekoBot
-- **文档地址**: https://nekobotteam.github.io
+- **项目地址**: https://github.com/OfficialNekoTeam/NekoBot
+- **文档地址**: https://officialnekoteam.github.io
 - **包管理器**: pnpm
 - **主色调**: #39C5BB
 
@@ -121,8 +121,8 @@ docs/
 
 ## 联系方式
 
-- **项目地址**: https://github.com/NekoBotTeam/NekoBot
-- **文档地址**: https://nekobotteam.github.io
-- **问题反馈**: https://github.com/NekoBotTeam/NekoBot/issues
-- **社区讨论**: https://github.com/NekoBotTeam/NekoBot/discussions
+- **项目地址**: https://github.com/OfficialNekoTeam/NekoBot
+- **文档地址**: https://officialnekoteam.github.io
+- **问题反馈**: https://github.com/OfficialNekoTeam/NekoBot/issues
+- **社区讨论**: https://github.com/OfficialNekoTeam/NekoBot/discussions
 

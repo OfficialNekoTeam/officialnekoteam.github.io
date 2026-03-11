@@ -5,7 +5,7 @@
 ## 项目结构
 
 ```
-nekobotdevs.github.io/
+officialnekoteam.github.io/
 ├── docs/                          # 文档源码
 │   ├── .vitepress/               # VitePress 配置
 │   │   ├── config.ts            # 主配置文件
@@ -55,8 +55,8 @@ nekobotdevs.github.io/
 ### 1. 克隆项目
 
 ```bash
-git clone https://github.com/NekoBotDevs/nekobotdevs.github.io.git
-cd nekobotdevs.github.io
+git clone https://github.com/OfficialNekoTeam/officialnekoteam.github.io.git
+cd officialnekoteam.github.io
 ```
 
 ### 2. 安装依赖
@@ -296,7 +296,7 @@ pnpm preview
 
 ## 联系方式
 
-- **项目地址**: https://github.com/NekoBotDevs/nekobotdevs.github.io
-- **问题反馈**: https://github.com/NekoBotDevs/nekobotdevs.github.io/issues
-- **讨论区**: https://github.com/NekoBotDevs/nekobotdevs.github.io/discussions
+- **项目地址**: https://github.com/OfficialNekoTeam/officialnekoteam.github.io
+- **问题反馈**: https://github.com/OfficialNekoTeam/officialnekoteam.github.io/issues
+- **讨论区**: https://github.com/OfficialNekoTeam/officialnekoteam.github.io/discussions
 

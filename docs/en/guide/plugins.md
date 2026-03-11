@@ -316,4 +316,4 @@ class BasePlugin(ABC):
 
 ## More Examples
 
-For more plugin examples, please refer to: [NekoBot Plugins Example](https://github.com/OfficialNekoTeam/NekoBot_Plugins_Example)
+For more plugin examples, please refer to: [NekoBot Plugin Template](https://github.com/OfficialNekoTeam/nekobot_plugin_template)

@@ -8,11 +8,11 @@
 
 点击项目页面右上角的 "Fork" 按钮，将项目 fork 到您的 GitHub 账户。
 
-### 2. 克隆项目
+### 2. 克隆你的 Fork
 
 ```bash
-git clone https://github.com/您的用户名/nekobotdevs.github.io.git
-cd nekobotdevs.github.io
+git clone https://github.com/<your-username>/officialnekoteam.github.io.git
+cd officialnekoteam.github.io
 ```
 
 ### 3. 安装依赖
@@ -186,9 +186,9 @@ style: 调整首页样式
 
 ## 联系方式
 
-- **项目地址**: https://github.com/NekoBotDevs/nekobotdevs.github.io
-- **问题反馈**: https://github.com/NekoBotDevs/nekobotdevs.github.io/issues
-- **讨论区**: https://github.com/NekoBotDevs/nekobotdevs.github.io/discussions
+- **项目地址**: https://github.com/OfficialNekoTeam/officialnekoteam.github.io
+- **问题反馈**: https://github.com/OfficialNekoTeam/officialnekoteam.github.io/issues
+- **讨论区**: https://github.com/OfficialNekoTeam/officialnekoteam.github.io/discussions
 
 ## 感谢
 

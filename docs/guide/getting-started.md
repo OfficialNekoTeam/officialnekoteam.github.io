@@ -231,4 +231,4 @@ docker run -d -p 6285:6285 --name nekobot nekobot
 
 - [NekoBot](https://github.com/OfficialNekoTeam/NekoBot) - 主项目
 - [NekoBot Dashboard](https://github.com/OfficialNekoTeam/NekoBot-Dashboard) - Web 管理后台
-- [NekoBot Plugins Example](https://github.com/OfficialNekoTeam/NekoBot_Plugins_Example) - 插件示例
+- [NekoBot Plugin Template](https://github.com/OfficialNekoTeam/nekobot_plugin_template) - 插件模板
