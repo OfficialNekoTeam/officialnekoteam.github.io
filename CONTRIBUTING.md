@@ -11,8 +11,8 @@
 ### 2. 克隆你的 Fork
 
 ```bash
-git clone https://github.com/<your-username>/officialnekoteam.github.io.git
-cd officialnekoteam.github.io
+git clone https://github.com/<your-username>/NekoBotDocs.git
+cd NekobotDocs
 ```
 
 ### 3. 安装依赖
@@ -186,9 +186,9 @@ style: 调整首页样式
 
 ## 联系方式
 
-- **项目地址**: https://github.com/OfficialNekoTeam/officialnekoteam.github.io
-- **问题反馈**: https://github.com/OfficialNekoTeam/officialnekoteam.github.io/issues
-- **讨论区**: https://github.com/OfficialNekoTeam/officialnekoteam.github.io/discussions
+- **项目地址**: https://github.com/Carillen/NekoBotDocs
+- **问题反馈**: https://github.com/Carillen/NekoBotDocs/issues
+- **讨论区**: https://github.com/Carillen/NekoBotDocs/discussions
 
 ## 感谢
 

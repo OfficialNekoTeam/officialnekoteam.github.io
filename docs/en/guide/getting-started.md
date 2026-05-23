@@ -19,7 +19,7 @@ This guide will help you get started with NekoBot, from installation to running 
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/OfficialNekoTeam/NekoBot.git
+git clone https://github.com/Carillen/NekoBot.git
 cd NekoBot
 ```
 
