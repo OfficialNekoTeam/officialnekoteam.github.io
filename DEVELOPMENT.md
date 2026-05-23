@@ -56,7 +56,7 @@ NekoBotDocs/
 
 ```bash
 git clone https://github.com/Carillen/NekoBotDocs.git
-cd NekobotDocs
+cd NekoBotDocs
 ```
 
 ### 2. 安装依赖

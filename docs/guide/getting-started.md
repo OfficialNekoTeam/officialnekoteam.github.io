@@ -43,16 +43,7 @@ python main.py
 初始密码: <随机生成的密码>
 ```
 
-### 6. 访问独立部署的 Web 仪表盘
-
-如果你单独部署了 [NekoBot Dashboard](https://github.com/Carillen/NekoBot-Dashboard)：
-
-1. 克隆仪表盘仓库
-2. 安装依赖并启动开发服务器
-3. 访问 `http://localhost:3000`
-4. 配置 API 地址指向 NekoBot 后端
-
-## 默认账户
+初始密码只会在首次创建账号时输出，请登录后立即修改密码。
 
 ## 第四步：打开 WebUI
 
@@ -85,17 +76,6 @@ usage: main.py [--webui | --no-webui] [--config PATH] [--host HOST] [--port PORT
 | `--host HOST` | WebUI 监听地址 | `0.0.0.0` |
 | `--port PORT` | WebUI 监听端口 | `6285` |
 
-## 常见问题
-
-**Q: WebUI 无法访问**
-
-确认 `--no-webui` 没有被传入，且端口 6285 未被占用。
-
-**Q: OneBot 适配器和 WebUI 端口冲突**
-
-1. **本地插件**: 将插件文件放入 `data/plugins/` 目录
-2. **在线插件**: 通过 Web 仪表盘的插件管理页面安装
-
 ## Docker 部署
 
 NekoBot 提供 Docker 镜像，支持容器化部署。
@@ -121,7 +101,21 @@ docker build -t nekobot .
 docker run -d -p 6285:6285 --name nekobot nekobot
 ```
 
+## 常见问题
+
+**Q: WebUI 无法访问**
+
+确认 `--no-webui` 没有被传入，且端口 6285 未被占用。
+
+**Q: OneBot 适配器和 WebUI 端口冲突**
+
+两者必须使用**不同端口**。WebUI 默认 `6285`，OneBot V11 适配器默认 `6299`，不要在配置中手动将两者设为同一端口。
+
 **Q: `Address already in use` 错误**
+
+有残留进程占用了端口，运行 `lsof -i :6285` 找到进程并 kill 掉。
+
+## 相关链接
 
 - [NekoBot](https://github.com/Carillen/NekoBot) - 主项目
 - [NekoBot Dashboard](https://github.com/Carillen/NekoBot-Dashboard) - Web 管理后台

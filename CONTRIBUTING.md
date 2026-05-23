@@ -12,7 +12,7 @@
 
 ```bash
 git clone https://github.com/<your-username>/NekoBotDocs.git
-cd NekobotDocs
+cd NekoBotDocs
 ```
 
 ### 3. 安装依赖
