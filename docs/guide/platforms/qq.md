@@ -1,231 +1,124 @@
-# QQ 平台对接
+# QQ 平台对接（OneBot V11）
 
-NekoBot 支持 QQ 平台，通过 OneBot V11 协议对接。
+NekoBot 当前通过 OneBot V11 协议接入 QQ。推荐搭配 NapCatQQ 等 OneBot V11 实现使用。
 
-## OneBot V11 协议
+## 连接方式
 
-OneBot V11 是 CQHTTP 的继承者，是一个通用的机器人消息接口标准。
+当前实现是 **反向 WebSocket**：
 
-## 快速开始
-
-### 1. 安装 NapCatQQ
-
-NapCatQQ 是基于 NTQQ 的 OneBot V11 实现。
-
-#### Windows
-
-1. 下载 [NapCatQQ](https://github.com/NapNeko/NapCatQQ/releases)
-2. 解压并运行
-3. 按照提示配置
-
-#### Linux
-
-```bash
-git clone https://github.com/NapNeko/NapCatQQ.git
-cd NapCatQQ
-docker run -d --name napcat -p 6299:6299 ghcr.io/mlikiowa/napcat-docker:latest
+```text
+NapCatQQ / OneBot 实现 -> ws://NekoBot:6299/ws -> NekoBot
 ```
 
-### 2. 配置 NekoBot
+NekoBot 自己启动 WebSocket 服务，OneBot 实现作为客户端连接进来。
 
-编辑 `data/platforms_sources.json`：
+## NekoBot 配置
+
+编辑 `data/config.json` 的 `platforms` 数组：
 
 ```json
 {
-  "aiocqhttp": {
-    "type": "aiocqhttp",
-    "enable": true,
-    "id": "aiocqhttp",
-    "name": "NekoBot",
-    "ws_host": "0.0.0.0",
-    "ws_port": 6299,
-    "command_prefix": "/"
-  }
+  "platforms": [
+    {
+      "type": "onebot_v11",
+      "instance_uuid": "qq_bot_1",
+      "enabled": true,
+      "host": "0.0.0.0",
+      "port": 6299,
+      "path": "/ws",
+      "access_token": "your-token",
+      "self_id": "123456789",
+      "command_prefix": "/"
+    }
+  ]
 }
 ```
 
-### 3. 配置 NapCatQQ
+如果不需要访问令牌，可将 `access_token` 设为空字符串或删除该字段。公网或跨机器部署时建议设置访问令牌。
 
-在 NapCatQQ 配置文件中设置 WebSocket 服务：
+## NapCatQQ 配置
 
-```yaml
-onebot:
-  http:
-    enable: false
-  ws:
-    enable: true
-    host: 0.0.0.0
-    port: 6299
+在 NapCatQQ 中添加 WebSocket 客户端连接，目标地址指向 NekoBot：
+
+```text
+ws://127.0.0.1:6299/ws
 ```
 
-### 4. 启动服务
+如果 NekoBot 和 NapCatQQ 不在同一台机器，将 `127.0.0.1` 改为 NekoBot 所在机器的 IP 或域名。
 
-1. 启动 NapCatQQ
-2. 启动 NekoBot：
-```bash
-python main.py
+如果 NekoBot 配置了 `access_token`，NapCatQQ 中也需要填相同 token，或通过 `Authorization: Bearer <token>` 方式发送。
+
+## 端口说明
+
+| 服务 | 默认端口 |
+|------|----------|
+| WebUI/API | `6285` |
+| OneBot V11 WebSocket | `6299` |
+
+两个端口不能相同，否则启动会失败。
+
+## 启动顺序
+
+推荐顺序：
+
+1. 启动 NekoBot
+2. 确认日志出现 OneBot V11 transport listening
+3. 启动 NapCatQQ 或启用其 WebSocket 客户端
+4. 在 QQ 中发送消息测试
+
+## 支持的消息
+
+当前 OneBot V11 适配器会标准化以下常见消息段：
+
+| 消息段 | 说明 |
+|--------|------|
+| `text` | 文本 |
+| `at` | @ 用户 |
+| `reply` | 回复消息 |
+| `image` | 图片 |
+| `record` | 语音 |
+| `video` | 视频 |
+
+框架会将消息解析为平台无关事件，插件通常只需要读取 `plain_text` 或通过上下文回复。
+
+## 命令触发
+
+默认命令前缀为 `/`。例如：
+
+```text
+/help
+/hello NekoBot
 ```
 
-## 事件类型
-
-NekoBot 支持以下 QQ 事件：
-
-### 消息事件
-
-| 事件类型 | 说明 |
-|----------|------|
-| 群消息 | 群组内的消息 |
-| 私聊消息 | 私聊消息 |
-| 群提示消息 | 群组提示消息（如入群、退群） |
-| 频道消息 | QQ 频道消息 |
-
-### 通知事件
-
-| 事件类型 | 说明 |
-|----------|------|
-| 群成员增加 | 新成员加入群组 |
-| 群成员减少 | 成员离开群组 |
-| 群禁言 | 群组禁言事件 |
-| 好友添加 | 好友添加事件 |
-
-## 消息发送
-
-### 发送群消息
-
-```python
-await self.send_group_message(
-    group_id=123456,
-    user_id=789,
-    message="Hello!",
-    platform_id="aiocqhttp"
-)
-```
-
-### 发送私聊消息
-
-```python
-await self.send_private_message(
-    user_id=789,
-    message="Hello!",
-    platform_id="aiocqhttp"
-)
-```
-
-### 发送图片
-
-```python
-import httpx
-
-async def send_image(self, group_id, user_id, image_url):
-    await self.send_group_message(
-        group_id=group_id,
-        user_id=user_id,
-        message=f"[CQ:image,file={image_url}]",
-        platform_id="aiocqhttp"
-    )
-```
-
-### 发送富文本消息
-
-```python
-async def send_rich_message(self, group_id, user_id):
-    message = (
-        "欢迎使用 NekoBot!\n"
-        "[CQ:face,id=128]\n"
-        "点击查看更多：https://example.com"
-    )
-    await self.send_group_message(
-        group_id=group_id,
-        user_id=user_id,
-        message=message,
-        platform_id="aiocqhttp"
-    )
-```
-
-## CQ 码格式
-
-OneBot V11 使用 CQ 码表示特殊消息元素：
-
-| CQ 码 | 说明 | 示例 |
-|-------|------|------|
-| `[CQ:image,file=xxx]` | 图片 | `[CQ:image,file=http://example.com/image.jpg]` |
-| `[CQ:record,file=xxx]` | 语音 | `[CQ:record,file=http://example.com/audio.mp3]` |
-| `[CQ:at,id=xxx]` | @某人 | `[CQ:at,id=123456]` |
-| `[CQ:face,id=xxx]` | 表情 | `[CQ:face,id=128]` |
-| `[CQ:share,url=xxx]` | 链接分享 | `[CQ:share,url=https://example.com]` |
-| `[CQ:music,id=xxx]` | 音乐分享 | `[CQ:music,id=123456]` |
-
-## 高级功能
-
-### 群组管理
-
-```python
-async def kick_user(self, group_id, user_id, reject_add_request=False):
-    # 踢出群成员
-    await self.platform_server.call_platform_api(
-        platform_id="aiocqhttp",
-        action="set_group_kick",
-        params={"group_id": group_id, "user_id": user_id, "reject_add_request": reject_add_request}
-    )
-
-async def mute_user(self, group_id, user_id, duration=60):
-    # 禁言用户（秒）
-    await self.platform_server.call_platform_api(
-        platform_id="aiocqhttp",
-        action="set_group_ban",
-        params={"group_id": group_id, "user_id": user_id, "duration": duration}
-    )
-```
-
-### 好友操作
-
-```python
-async def add_friend(self, user_id, comment=""):
-    # 添加好友
-    await self.platform_server.call_platform_api(
-        platform_id="aiocqhttp",
-        action="set_friend_add_request",
-        params={"flag": flag, "approve": True, "remark": comment}
-    )
-```
-
-### 获取群成员列表
-
-```python
-async def get_group_members(self, group_id):
-    result = await self.platform_server.call_platform_api(
-        platform_id="aiocqhttp",
-        action="get_group_member_list",
-        params={"group_id": group_id}
-    )
-    return result.get("data", [])
-```
+可在平台配置中修改 `command_prefix`。
 
 ## 常见问题
 
-### 连接失败
+### NapCatQQ 连接不上
 
-检查以下几点：
-1. NapCatQQ 是否正常运行
-2. WebSocket 端口是否正确
-3. 防火墙是否允许连接
-4. NekoBot 是否有权限访问 NapCatQQ
+检查：
 
-### 消息发送失败
+1. NekoBot 是否已启动
+2. `host` / `port` / `path` 是否和 NapCatQQ 连接地址一致
+3. 防火墙是否允许访问端口 `6299`
+4. `access_token` 是否一致
+5. WebUI 端口 `6285` 是否误填成 OneBot 端口
 
-1. 检查机器人是否有权限在群组内发送消息
-2. 确认 CQ 码格式是否正确
-3. 检查消息内容是否包含违规内容
+### 收到消息但不回复
 
-### 群组权限问题
+检查：
 
-确保机器人账号具有以下权限：
-- 发送消息权限
-- @全体成员权限（如需）
-- 管理员权限（如需执行管理操作）
+1. 是否配置了可用的 LLM Provider
+2. 插件是否启用
+3. 群聊是否需要 @ 或唤醒词
+4. 日志中是否有 Provider、权限或插件错误
+
+### 如何调用 OneBot API
+
+插件一般通过 `reply()` 回复消息。高级场景可以在平台适配器或扩展代码中调用 `call_api()`，action 名称遵循 OneBot V11 规范，例如 `send_group_msg`、`get_msg`、`set_group_ban`。
 
 ## 相关链接
 
 - [OneBot V11 规范](https://11.onebot.dev/)
 - [NapCatQQ GitHub](https://github.com/NapNeko/NapCatQQ)
-- [CQ 码列表](https://docs.go-cqhttp.org/cqcode)
+- [平台配置](../platform-configuration)

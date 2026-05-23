@@ -1,69 +1,32 @@
 # 快速开始
 
-本指南将帮助你快速上手 NekoBot，从安装到运行你的第一个机器人。
+本文档将引导你在 5 分钟内完成 NekoBot 的安装与首次运行。
 
 ## 环境要求
 
-- **Python**: 3.10 或更高版本
-- **操作系统**: Windows / Linux / macOS
-- **内存**: 建议 2GB 以上
-- **网络**: 需要访问互联网以安装依赖和连接 LLM 服务
-- **包管理器**: uv（推荐）或 pip
+- Python **3.13+**
+- [uv](https://docs.astral.sh/uv/)（推荐）或 pip
+- 网络连接（用于调用 LLM API）
+- 已配置好的 QQ 机器人（NapCatQQ 或其他 OneBot V11 实现）
 
-## 安装步骤
-
-### 1. 克隆仓库
+## 第一步：克隆仓库
 
 ```bash
 git clone https://github.com/Carillen/NekoBot.git
 cd NekoBot
 ```
 
-### 2. 安装依赖
-
-NekoBot 使用 uv 作为推荐的包管理器，也支持传统的 pip。
-
-#### 使用 uv（推荐）
+## 第二步：安装依赖
 
 ```bash
-# 安装 uv（如果尚未安装）
-pip install uv
-
-# 安装 NekoBot 及其依赖
+# 推荐使用 uv
 uv pip install -e .
-```
 
-#### 使用 pip
-
-```bash
-# 安装 NekoBot 及其依赖
+# 或使用 pip
 pip install -e .
 ```
 
-### 3. 创建配置文件
-
-首次运行时，NekoBot 会自动创建默认配置文件 `data/config.json`。
-
-你也可以手动创建配置文件：
-
-```json
-{
-  "command_prefix": "/",
-  "server": {
-    "host": "0.0.0.0",
-    "port": 6285
-  },
-  "jwt": {
-    "secret_key": "your-secret-key-here",
-    "algorithm": "HS256",
-    "access_token_expire_minutes": 30
-  },
-  "webui_enabled": true,
-  "demo": false
-}
-```
-
-### 4. 启动 NekoBot
+## 第三步：启动
 
 ```bash
 # 使用 uv
@@ -73,12 +36,11 @@ uv run main.py
 python main.py
 ```
 
-### 5. 访问 Web 仪表盘
+首次启动会在 `data/` 目录下自动生成 `config.json`。如果是第一次创建 WebUI 管理员账号，启动日志会输出初始登录信息：
 
-启动成功后，打开浏览器访问：
-
-```
-http://localhost:6285
+```text
+默认用户: nekobot
+初始密码: <随机生成的密码>
 ```
 
 ### 6. 访问独立部署的 Web 仪表盘
@@ -92,112 +54,44 @@ http://localhost:6285
 
 ## 默认账户
 
-NekoBot 提供了默认管理员账户：
+## 第四步：打开 WebUI
 
-- **用户名**: `nekobot`
-- **密码**: `nekobot`
+启动成功后，访问 `http://localhost:6285` 进入 Web 管理界面。
 
-> **安全提示**: 首次登录后，系统会强制要求你修改密码，请务必修改以确保安全。
+在 WebUI 中完成以下配置：
 
-## CLI 命令
+1. **LLM 提供商** → 添加一个 OpenAI / Anthropic / Gemini / Compatible 提供商，填入 API Key。
+2. **平台配置**（`data/config.json` 中的 `platforms` 字段） → 填写 OneBot V11 连接信息。
+3. **插件管理** → 查看、配置、启用或热重载本地插件。
 
-NekoBot 提供了命令行工具，用于管理和操作机器人。
+OneBot V11 的连接地址通常为：
 
-| 命令 | 说明 |
-|------|------|
-| (默认) | 启动 NekoBot 服务器 |
-| `reset-password` | 重置 WebUI 默认账户密码 |
-| `version`, `-v` | 显示版本信息 |
-| `help`, `-h` | 显示帮助信息 |
-
-### 重置密码
-
-```bash
-# 使用 uv
-uv run main.py reset-password
-
-# 或使用 python
-python main.py reset-password
+```text
+ws://127.0.0.1:6299/ws
 ```
 
-> **注意**: 输入密码时无任何回显提示，直接输入密码后回车即可。
+在 NapCatQQ 等 OneBot 实现中配置 WebSocket 客户端连接到该地址。
 
-## 验证安装
-
-启动 NekoBot 后，你应该能在终端看到类似的日志输出：
+## 启动参数
 
 ```
-2025-XX-XX XX:XX:XX.XXX [INFO] 启动 NekoBot...
-2025-XX-XX XX:XX:XX.XXX [INFO] 正在初始化 NekoBot 服务器...
-2025-XX-XX XX:XX:XX.XXX [INFO] 平台适配器已注册: aiocqhttp
-2025-XX-XX XX:XX:XX.XXX [INFO] 开始加载插件...
-2025-XX-XX XX:XX:XX.XXX [INFO] 插件加载完成，共 X 个插件
-2025-XX-XX XX:XX:XX.XXX [INFO] 启动 Quart 应用: http://0.0.0.0:6285
+usage: main.py [--webui | --no-webui] [--config PATH] [--host HOST] [--port PORT]
 ```
 
-## 下一步
-
-- [平台对接](./platforms.md) - 配置聊天平台（QQ、Telegram、Discord 等）
-- [LLM 配置](./llm.md) - 配置 AI 模型（OpenAI、Gemini、Claude 等）
-- [插件系统](./plugins.md) - 了解插件开发和安装
-- [Web 仪表盘](./dashboard.md) - 了解仪表盘部署和功能
+| 参数 | 说明 | 默认值 |
+|------|------|--------|
+| `--webui` / `--no-webui` | 启用或禁用 WebUI | 启用 |
+| `--config PATH` | 指定配置文件路径 | `data/config.json` |
+| `--host HOST` | WebUI 监听地址 | `0.0.0.0` |
+| `--port PORT` | WebUI 监听端口 | `6285` |
 
 ## 常见问题
 
-### 如何修改端口？
+**Q: WebUI 无法访问**
 
-编辑 `data/config.json` 文件，修改 `server.port` 字段：
+确认 `--no-webui` 没有被传入，且端口 6285 未被占用。
 
-```json
-{
-  "server": {
-    "host": "0.0.0.0",
-    "port": 8080
-  }
-}
-```
-
-### 忘记密码怎么办？
-
-运行重置密码命令：
-
-```bash
-# 使用 uv
-uv run main.py reset-password
-
-# 或使用 python
-python main.py reset-password
-```
-
-### 如何启用或禁用 Web 仪表盘？
-
-编辑 `data/config.json`，修改 `webui_enabled` 字段：
-
-```json
-{
-  "webui_enabled": true
-}
-```
-
-### 如何查看日志？
-
-- **终端日志**: NekoBot 使用 loguru 输出日志到终端
-- **Web 仪表盘**: 通过"日志"页面实时查看日志
-- **日志文件**: 日志文件保存在 `data/logs/` 目录
-
-### 如何添加 LLM 提供商？
-
-通过 Web 仪表盘添加：
-
-1. 登录 Web 仪表盘
-2. 进入"LLM 管理"页面
-3. 点击"添加提供商"
-4. 选择提供商类型并填写配置
-5. 保存并启用提供商
-
-### 如何安装插件？
-
-NekoBot 支持两种插件安装方式：
+**Q: OneBot 适配器和 WebUI 端口冲突**
 
 1. **本地插件**: 将插件文件放入 `data/plugins/` 目录
 2. **在线插件**: 通过 Web 仪表盘的插件管理页面安装
@@ -227,7 +121,7 @@ docker build -t nekobot .
 docker run -d -p 6285:6285 --name nekobot nekobot
 ```
 
-## 相关项目
+**Q: `Address already in use` 错误**
 
 - [NekoBot](https://github.com/Carillen/NekoBot) - 主项目
 - [NekoBot Dashboard](https://github.com/Carillen/NekoBot-Dashboard) - Web 管理后台
