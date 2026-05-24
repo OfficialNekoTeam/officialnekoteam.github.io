@@ -1,7 +1,7 @@
 import type { FooterData } from '@theojs/lumen'
 
 export const Footer_Data: FooterData = {
-  author: { name: 'OfficialNekoTeam', link: 'https://github.com/OfficialNekoTeam' },
+  author: { name: 'Carillen', link: 'https://github.com/Carillen' },
   group: [
     {
       title: '部署',
@@ -9,7 +9,7 @@ export const Footer_Data: FooterData = {
       links: [
         { name: 'Vercel-NekoBot', link: 'https://docs.nekobot.dev/' },
         { name: 'Vercel-Docs', link: 'https://nekobot-docs.vercel.app/' },
-        { name: 'Github Page', link: 'https://officialnekoteam.github.io/' },
+        
       ],
     },
     {

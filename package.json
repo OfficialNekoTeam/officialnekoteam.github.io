@@ -18,7 +18,7 @@
     "documentation",
     "vitepress"
   ],
-  "author": "OfficialNekoTeam",
+  "author": "Carillen",
   "license": "MIT",
   "dependencies": {
     "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.18.2",

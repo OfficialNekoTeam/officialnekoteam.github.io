@@ -15,10 +15,10 @@ hero:
       link: /guide/getting-started
     - theme: alt
       text: GitHub
-      link: https://github.com/OfficialNekoTeam/NekoBot
+      link: https://github.com/Carillen/NekoBot
     - theme: alt
       text: 仪表盘
-      link: https://github.com/OfficialNekoTeam/Nekobot-Dashboard
+      link: https://github.com/Carillen/NekoBot-Dashboard
 
 features:
   - title: OneBot V11 支持

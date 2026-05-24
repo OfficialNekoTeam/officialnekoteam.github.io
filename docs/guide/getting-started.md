@@ -12,7 +12,7 @@
 ## 第一步：克隆仓库
 
 ```bash
-git clone https://github.com/OfficialNekoTeam/NekoBot.git
+git clone https://github.com/Carillen/NekoBot.git
 cd NekoBot
 ```
 
@@ -76,6 +76,31 @@ usage: main.py [--webui | --no-webui] [--config PATH] [--host HOST] [--port PORT
 | `--host HOST` | WebUI 监听地址 | `0.0.0.0` |
 | `--port PORT` | WebUI 监听端口 | `6285` |
 
+## Docker 部署
+
+NekoBot 提供 Docker 镜像，支持容器化部署。
+
+### 使用 Docker Compose
+
+```bash
+# 克隆仓库
+git clone https://github.com/Carillen/NekoBot.git
+cd NekoBot
+
+# 启动容器
+docker-compose up -d
+```
+
+### 单独使用 Docker
+
+```bash
+# 构建镜像
+docker build -t nekobot .
+
+# 运行容器
+docker run -d -p 6285:6285 --name nekobot nekobot
+```
+
 ## 常见问题
 
 **Q: WebUI 无法访问**
@@ -89,3 +114,9 @@ usage: main.py [--webui | --no-webui] [--config PATH] [--host HOST] [--port PORT
 **Q: `Address already in use` 错误**
 
 有残留进程占用了端口，运行 `lsof -i :6285` 找到进程并 kill 掉。
+
+## 相关链接
+
+- [NekoBot](https://github.com/Carillen/NekoBot) - 主项目
+- [NekoBot Dashboard](https://github.com/Carillen/NekoBot-Dashboard) - Web 管理后台
+- [NekoBot Plugin Template](https://github.com/Carillen/nekobot_plugin_template) - 插件模板

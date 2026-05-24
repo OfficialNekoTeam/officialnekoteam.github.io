@@ -146,7 +146,7 @@ message = self.get_config("message", "hello")
 - 插件签名或 hash 校验
 - 依赖安装确认和回滚
 
-这些能力会优先保证登录鉴权、文件结构校验、zip 路径穿越检查和失败回滚后再开放。
+更多插件示例请参考：[NekoBot Plugin Template](https://github.com/Carillen/nekobot_plugin_template)
 
 ## 相关文档
 

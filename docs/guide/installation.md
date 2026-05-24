@@ -11,9 +11,8 @@
 ## 使用 uv 安装（推荐）
 
 ```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-
-git clone https://github.com/OfficialNekoTeam/NekoBot.git
+# 克隆仓库
+git clone https://github.com/Carillen/NekoBot.git
 cd NekoBot
 uv sync
 ```
@@ -27,7 +26,8 @@ uv run main.py
 ## 使用 pip 安装
 
 ```bash
-git clone https://github.com/OfficialNekoTeam/NekoBot.git
+# 克隆仓库
+git clone https://github.com/Carillen/NekoBot.git
 cd NekoBot
 pip install -e .
 python main.py
